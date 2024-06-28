@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "name": "PirateText",
+    "description": "Converts all text on a page into Pirate Language.",
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "browser_action": {
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      },
+      "default_title": "PirateText",
+      "default_popup": ""
+    },
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+P",
+          "mac": "MacCtrl+Shift+P"
+        },
+        "description": "Toggle PirateText"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
